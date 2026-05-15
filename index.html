@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quay số May mắn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'JetBrains Mono', monospace;
+        background-color: #0d0f18; /* Hacker background */
+        color: #c0caf5;
+      }
+      @keyframes pop-in {
+        0% { opacity: 0; transform: scale(0.7); }
+        70% { transform: scale(1.05); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+      @keyframes subtle-bounce {
+        0%, 100% { transform: translateY(0) scale(1.02); }
+        50% { transform: translateY(-3px) scale(1.05); }
+      }
+      @keyframes radio-zoom-shake {
+        0% { transform: scale(1); }
+        30% { transform: scale(1.3) rotate(5deg); }
+        50% { transform: scale(1.3) rotate(-5deg); }
+        100% { transform: scale(1); }
+      }
+      @keyframes highlight-vibrate {
+        0% { transform: translate(0); }
+        25% { transform: translate(-1px, -1px); }
+        50% { transform: translate(1px, -1px); }
+        75% { transform: translate(-1px, 1px); }
+        100% { transform: translate(0); }
+      }
+      @keyframes result-shake {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-2px); }
+        40% { transform: translateX(2px); }
+      }
+      @keyframes gentle-label-pulse {
+        0%, 100% { 
+          transform: scale(1);
+          text-shadow: 0 0 5px rgba(125, 207, 255, 0.4);
+          color: #7dcfff;
+        }
+        50% { 
+          transform: scale(1.05);
+          text-shadow: 0 0 15px rgba(125, 207, 255, 0.8);
+          color: #00ffff;
+        }
+      }
+      @keyframes winner-label-glow {
+        0%, 100% {
+          transform: scale(1.05);
+          text-shadow: 0 0 10px rgba(187, 154, 247, 0.5);
+          color: #bb9af7;
+        }
+        50% {
+          transform: scale(1.1);
+          text-shadow: 0 0 20px rgba(187, 154, 247, 0.8);
+          color: #d699b6;
+        }
+      }
+      @keyframes shimmer-victory {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      @keyframes warning-pulse {
+        0%, 100% { box-shadow: 0 0 5px rgba(255, 107, 107, 0.2); }
+        50% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.6); }
+      }
+      .animate-pop-in {
+        animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+      .animate-subtle-bounce {
+        animation: subtle-bounce 0.8s ease-in-out infinite;
+      }
+      .animate-radio-zoom-shake {
+        animation: radio-zoom-shake 0.5s ease;
+      }
+      .animate-highlight-vibrate {
+        animation: highlight-vibrate 0.2s linear infinite;
+      }
+      .animate-gentle-label-pulse {
+        animation: gentle-label-pulse 2s infinite;
+      }
+      .animate-winner-label-glow {
+        animation: winner-label-glow 1s infinite;
+      }
+      .animate-warning-pulse {
+        animation: warning-pulse 1.5s infinite;
+      }
+      .animate-shimmer-victory {
+        background: linear-gradient(90deg, transparent, rgba(125, 207, 255, 0.1), transparent);
+        background-size: 200% 100%;
+        animation: shimmer-victory 2s infinite linear;
+      }
+      input[type="radio"] {
+        transition: transform 0.2s ease;
+      }
+      input[type="radio"]:hover {
+        transform: scale(1.2);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

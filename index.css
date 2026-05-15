@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #0d0f18;
+  --card-bg: #1a1b26;
+  --accent-cyan: #7dcfff;
+  --accent-magenta: #bb9af7;
+  --accent-green: #9ece6a;
+  --text-main: #c0caf5;
+  --border-glow: 0 0 10px rgba(125, 207, 255, 0.3);
+  --hud-accent: #7dcfff; /* New dynamic variable */
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes neon-pulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(125, 207, 255, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(125, 207, 255, 0.5); }
+}
+
+.hypr-card {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(125, 207, 255, 0.2);
+  box-shadow: var(--border-glow);
+  border-radius: 4px; /* Sharp but slightly rounded for modern hacker look */
+}
+
+.hypr-border {
+  border: 1px solid var(--hud-accent);
+}
+
+.hypr-text-glow {
+  text-shadow: 0 0 8px var(--hud-accent);
+}
+
+@keyframes pop-in {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-scan {
+  animation: scan 3s linear infinite;
+}
+
+@keyframes warning-pulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-warning-pulse {
+  animation: warning-pulse 1s ease-in-out infinite;
+}
+
+@keyframes shake-heavy {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.animate-shake-heavy {
+  animation: shake-heavy 0.8s cubic-bezier(.36,.07,.19,.97) both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes subtle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.animate-subtle-bounce {
+  animation: subtle-bounce 2s ease-in-out infinite;
+}
+
+/* Custom fall animation for confetti */
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Custom winner pulse */
+@keyframes winner-label-glow {
+  0%, 100% { text-shadow: 0 0 5px #bb9af7, 0 0 20px #bb9af7; }
+  50% { text-shadow: 0 0 10px #bb9af7, 0 0 30px #bb9af7; }
+}
+
+.animate-winner-label-glow {
+  animation: winner-label-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes progress-load {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(-30%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-progress-load {
+  animation: progress-load 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+/* Custom scrollbar for hacker vibe */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}

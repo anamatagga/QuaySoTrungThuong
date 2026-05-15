@@ -1,0 +1,6 @@
+{
+  "name": "Chương trình Quay số May mắn",
+  "description": "Một ứng dụng quay số trúng thưởng với 8 giải từ Giải tám đến Đặc biệt, hỗ trợ quay ngẫu nhiên 00-99 trong 7 giây.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
